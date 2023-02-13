@@ -16,7 +16,7 @@ export default function HomePage(){
                         <div className="row align-items-center">
                             <div className="col-md-6">
                                 <div className="top-left text-center text-md-left">
-                                    <h6>Opening Hours : Saturday to Tuesday - 8am to 10pm</h6>
+                                    <h6>Opening Hours : Monday To Sunday - 8am to 10pm</h6>
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -73,7 +73,7 @@ export default function HomePage(){
                                             <strong>Email</strong>
                                             <br/>
                                                 <a href="mailto:info@medic.com">
-                                                    <span>infoH@gmail.com</span>
+                                                    <span>janvier.rutagengwa@gmail.com</span>
                                                 </a>
                                         </li>
                                         <li className="item text-left">
@@ -82,7 +82,7 @@ export default function HomePage(){
                                             </div>
                                             <strong>Call Now</strong>
                                             <br/>
-                                                <span>+ (250) - 784 - 4567</span>
+                                                <span>+ (250)-788-483-455</span>
                                         </li>
                                     </ul>
                                     <div className="link-btn text-center text-lg-right">
@@ -104,10 +104,10 @@ export default function HomePage(){
                         <div className="collapse navbar-collapse" id="navbarLinks">
                             <ul className="navbar-nav">
                                 <li className="nav-item @@appointment">
-                                    <a className="nav-link" href="">Login</a>
+                                    <a className="nav-link" href="/login">Login</a>
                                 </li>
                                 <li className="nav-item @@contact">
-                                    <a className="nav-link" href="">Sign Up</a>
+                                    <a className="nav-link" href="/signup">Sign Up</a>
                                 </li>
                             </ul>
                         </div>
@@ -122,7 +122,7 @@ export default function HomePage(){
                                         <h2 className="text-white" data-animation-in="slideInRight">We Care About Your
                                             Health</h2>
                                         <p className="tag-text mb-4" data-animation-in="slideInRight"
-                                           data-duration-in="0.6">don't hustate to approach us . </p>
+                                           data-duration-in="0.6">Don't hestate to approach us . </p>
                                         <a href="#aboutUs" className="btn btn-main btn-white"
                                            data-animation-in="slideInRight" data-duration-in="1.2">about us</a>
                                     </div>
@@ -139,24 +139,22 @@ export default function HomePage(){
                             <div className="col-lg-4 col-md-4 emmergency item">
                                 <i className="fa fa-phone"></i>
                                 <h2>Emegency Cases</h2>
-                                <a href="tel:1-800-700-6200">1-800-700-6200</a>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                <a href="tel:1-800-700-6200">0788483455</a>
+                                <p>Whenever you get a health issue, reach us for quick support.</p>
                             </div>
                             <div className="col-lg-4 col-md-4 top-doctor item">
                                 <i className="fa fa-stethoscope"></i>
-                                <h2>24 Hour Service</h2>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore dignissimos
-                                    officia dicta suscipit
-                                    vel eum</p>
+                                <h2>24 Hours Service</h2>
+                                <p>We are available 24/7 to offer you a better service </p>
                                 <a href="" className="btn btn-main">Read more</a>
                             </div>
                             <div className="col-lg-4 col-md-4 working-time item">
                                 <i className="fa fa-hourglass-o"></i>
                                 <h2>Working Hours</h2>
                                 <ul className="w-hours">
-                                    <li>Mon - Fri - <span>8:00 - 17:00</span></li>
-                                    <li>Mon - Fri - <span>8:00 - 17:00</span></li>
-                                    <li>Mon - Fri - <span>8:00 - 17:00</span></li>
+                                    <li>Mon - Fri - <span>8:00 - 22:00</span></li>
+                                    <li>Sat - Sun - <span>9:00 - 17:00</span></li>
+                                    <li>Mon - Fri - <span>8:00 - 22:00</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -169,8 +167,14 @@ export default function HomePage(){
                                 <div className="image-content">
                                     <div className="section-title text-center">
                                         <h3>Best Features <span>of Our Hospital</span></h3>
-                                        <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Ipsam magni in at debitis <br/> nam error officia vero tempora alias? Sunt?
+                                        <p className="mb-0"> We always focus on the satisfaction of our clients by offering:
+                                        <br/>1. Patient-Centric Approach.
+                                        <br/>2. Focused Leadership. 
+                                        <br/>3. Cutting-Edge Technology.
+                                        <br/>4. Transparent Pricing.
+                                    <br/> 5. Coordinated Care. 
+
+                                        <br/> Your better health is Our Aim!
                                         </p>
                                     </div>
 
@@ -184,12 +188,8 @@ export default function HomePage(){
                                                                                      alt="features image" /></a>
                                                     </figure>
                                                 </div>
-                                                <h3 className="mb-2">Orthopedics</h3>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-                                                    ducimus veniam illo quibusdam pariatur
-                                                    ex sunt, est aspernatur
-                                                    at debitis eius vitae vel nostrum dolorem labore autem corrupti odit
-                                                    mollitia?</p>
+                                                <h3 className="mb-2">Maternity </h3>
+                                                <p> We are the best hospital that provides facility designed for the care of women before and during childbirth and for the care of newborn babies.</p>
                                             </div>
                                         </div>
                                         <div className="col-sm-6">
@@ -203,11 +203,12 @@ export default function HomePage(){
                                                     </figure>
                                                 </div>
                                                 <h3 className="mb-2">Diaginostic</h3>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-                                                    ducimus veniam illo quibusdam pariatur
-                                                    ex sunt, est aspernatur
-                                                    at debitis eius vitae vel nostrum dolorem labore autem corrupti odit
-                                                    mollitia?</p>
+                                                <p>
+                                                    Maternity services are provided by a multi-disciplinary team of midwives,
+                                                     obstetricians, anaesthetists, physiotherapists, mental health professionals and others.
+                                                      We aim to provide the highest quality care, supporting your physical 
+                                                      and mental health and your developing baby through your pregnancy,
+                                                       birth and the early postnatal days.</p>
                                             </div>
                                         </div>
                                         <div className="col-sm-6">
@@ -221,11 +222,7 @@ export default function HomePage(){
                                                     </figure>
                                                 </div>
                                                 <h3 className="mb-2">Psycology</h3>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-                                                    ducimus veniam illo quibusdam pariatur
-                                                    ex sunt, est aspernatur
-                                                    at debitis eius vitae vel nostrum dolorem labore autem corrupti odit
-                                                    mollitia?</p>
+                                                <p> We have psychologists that care for Pregnant women to ensure their good mental health.</p>
                                             </div>
                                         </div>
                                         <div className="col-sm-6">
@@ -239,11 +236,10 @@ export default function HomePage(){
                                                     </figure>
                                                 </div>
                                                 <h3 className="mb-2">General Treatment</h3>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-                                                    ducimus veniam illo quibusdam pariatur
-                                                    ex sunt, est aspernatur
-                                                    at debitis eius vitae vel nostrum dolorem labore autem corrupti odit
-                                                    mollitia?</p>
+                                                <p>The life of the new born is as valuable as the mother. 
+                                                    We offer an experience of general treatment that help to cure and prevent 
+                                                    various diseases that can affect the life of both the baby and the mother.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -280,33 +276,33 @@ export default function HomePage(){
                                                             <h3>About us</h3>
                                                         </div>
                                                         <div className="text">
-                                                            <p>this is the collection of hospitals in Rwanda that are specialized in maternally .</p>
-                                                            <p>we are here to help mothers to take care of children in first 1000 days.</p>
+                                                            <p>The only platform in hospitals in Rwanda that is specialized in maternity health.</p>
+                                                            <p>we are here to help and empower mothers to take care of children in first 1000 days of their life.</p>
                                                         </div>
                                                         {
                                                             showAboutUsReadMore?(<ul className={"content-list far color84"}>
                                                                 <li>
-                                                                    <i className="fa-dot-circle"></i>we are work with experienced hospitals
+                                                                    <i className="fa-dot-circle"></i>we work with experienced hospitals
                                                                 </li>
                                                                 <li>
                                                                     <i className="fa-dot-circle"></i>
-                                                                    here as you need us
+                                                                    We are available as you need us.
                                                                 </li>
                                                                 <li>
                                                                     <i className="fa-dot-circle"></i>
-                                                                    we know what wrong with your child
+                                                                    We know what wrong with your child.
                                                                 </li>
                                                             </ul>):(<ul className={"content-list far"}>
                                                                 <li>
-                                                                    <i className="fa-dot-circle"></i>we are work with experienced hospitals
+                                                                    <i className="fa-dot-circle"></i>We work with experienced hospitals.
                                                                 </li>
                                                                 <li>
                                                                     <i className="fa-dot-circle"></i>
-                                                                    here as you need us
+                                                                    We are available as you need us.
                                                                 </li>
                                                                 <li>
                                                                     <i className="fa-dot-circle"></i>
-                                                                    we know what wrong with your child
+                                                                    We know what wrong with your child
                                                                 </li>
                                                             </ul>)
                                                         }
@@ -330,11 +326,11 @@ export default function HomePage(){
                     <div className="container">
                         <div className="section-title text-center">
                             <h3>Provided
-                                <span>Services</span>
+                                <span> Services</span>
                             </h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. qui
-                                suscipit atque <br/>
-                                    fugiat officia corporis rerum eaque neque totam animi, sapiente culpa. Architecto!
+                            <p> Consultation services,
+                                health tips , medical care ,
+                        <br/> Vaccination services ...
                             </p>
                         </div>
                         <div className="row">
@@ -353,8 +349,9 @@ export default function HomePage(){
                                                 <a href="">
                                                     <h6>Dormitory</h6>
                                                 </a>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
-                                                    vero.</p>
+                                                <p>We provide homes for mothers before giving birth and in the period of 
+                                                    postpartum to help them experience a better maternity.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -367,11 +364,11 @@ export default function HomePage(){
                     <div className="container">
                         <div className="section-title text-center">
                             <h3>Some Hospitals
-                                <span>works with us</span>
+                                <span> work with us</span>
                             </h3>
-                            <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-                                illo, rerum
-                                <br/>natus nobis deleniti doloremque minima odit voluptatibus ipsam animi?</p>
+                            <p className="mb-0"> KING FAISAL HOSPITAL-RWANDA ,
+                                
+                                <br/>KIBAGABAGA DISTRICT HOSPITAL </p>
                         </div>
                         <div className="row justify-content-center">
                             <div className="col-lg-4 col-md-4">
@@ -380,8 +377,8 @@ export default function HomePage(){
                                          className="img-fluid"/>
                                         <div className="contents text-center">
                                             <h4>Dr. Robert Barrethion</h4>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos,
-                                                aspernatur.</p>
+                                            <p>Meet the most experienced Gynecologist for your reproductive health.
+                                            </p>
                                             <a href="" className="btn btn-main">Book Appointment</a>
                                         </div>
                                 </div>
@@ -392,8 +389,7 @@ export default function HomePage(){
                                          className="img-fluid"/>
                                         <div className="contents text-center">
                                             <h4>Dr. Marry Lou</h4>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos,
-                                                aspernatur.</p>
+                                            <p>Meet the psychologist for good mental health </p>
                                             <a href="" className="btn btn-main">Book Appointment</a>
                                         </div>
                                 </div>
@@ -404,8 +400,8 @@ export default function HomePage(){
                                          className="img-fluid"/>
                                         <div className="contents text-center">
                                             <h4>Dr. Sansa Stark</h4>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos,
-                                                aspernatur.</p>
+                                            <p> Our Children are our future images today. 
+                                                Meet the experienced pediatrician .</p>
                                             <a href="" className="btn btn-main">Book Appointment</a>
                                         </div>
                                 </div>
@@ -419,7 +415,7 @@ export default function HomePage(){
                             <div className="col-lg-12">
                                 <div className="section-title text-center">
                                     <h3>What Our
-                                        <span>Patients Says</span>
+                                        <span> Patients Says</span>
                                     </h3>
                                 </div>
                             </div>
@@ -435,9 +431,7 @@ export default function HomePage(){
                                                 </figure>
                                             </div>
                                             <h6>Adam Rose</h6>
-                                            <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia
-                                                consectetur, dolor sit amet, consectetur, numquam Lorem
-                                                ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                                            <p className="mb-0"> We are satisfied by the service offered </p>
                                         </div>
                                     </div>
                                     <div className="slide-item">
@@ -448,9 +442,7 @@ export default function HomePage(){
                                                 </figure>
                                             </div>
                                             <h6>David Warner</h6>
-                                            <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia
-                                                consectetur, dolor sit amet, consectetur, numquam Lorem
-                                                ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                                            <p className="mb-0"> I found a new meaning of life with you</p>
                                         </div>
                                     </div>
                                     <div className="slide-item">
@@ -461,9 +453,7 @@ export default function HomePage(){
                                                 </figure>
                                             </div>
                                             <h6>Amy Adams</h6>
-                                            <p className="mb-0">Neque porro quisquam est, qui dolorem ipsum quia
-                                                consectetur, dolor sit amet, consectetur, numquam Lorem
-                                                ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                                            <p className="mb-0"> Your love to our families is beyond. </p>
                                         </div>
                                     </div>
                                 </div>
@@ -494,20 +484,8 @@ export default function HomePage(){
                                                 <div id="collapseOne" className="collapse show" role="tabpanel"
                                                      aria-labelledby="headingOne" data-parent="#accordionGroup">
                                                     <div className="card-body">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life
-                                                        accusamus terry richardson ad squid. 3 wolf moon
-                                                        officia aute,
-                                                        non cupidatat skateboard dolor brunch. Food truck quinoa
-                                                        nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                                        tempor,
-                                                        sunt aliqua put a bird on it squid single-origin coffee nulla
-                                                        assumenda shoreditch et. Nihil anim keffiyeh
-                                                        helvetica, craft beer labore wes anderson cred nesciunt sapiente
-                                                        ea proident. Ad vegan excepteur butcher
-                                                        vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                                                        aesthetic synth nesciunt you probably
-                                                        haven't
-                                                        heard of them accusamus labore sustainable VHS.
+                                                        This is where you are safe about your life because all the services offered
+                                                        are provided by a group of experienced ethical health workers 
                                                     </div>
                                                 </div>
                                             </div>
@@ -524,20 +502,8 @@ export default function HomePage(){
                                                 <div id="collapseTwo" className="collapse" role="tabpanel"
                                                      aria-labelledby="headingTwo" data-parent="#accordionGroup">
                                                     <div className="card-body">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life
-                                                        accusamus terry richardson ad squid. 3 wolf moon
-                                                        officia aute,
-                                                        non cupidatat skateboard dolor brunch. Food truck quinoa
-                                                        nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                                        tempor,
-                                                        sunt aliqua put a bird on it squid single-origin coffee nulla
-                                                        assumenda shoreditch et. Nihil anim keffiyeh
-                                                        helvetica, craft beer labore wes anderson cred nesciunt sapiente
-                                                        ea proident. Ad vegan excepteur butcher
-                                                        vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                                                        aesthetic synth nesciunt you probably
-                                                        haven't
-                                                        heard of them accusamus labore sustainable VHS.
+                                                       Fell free to meet your patient any time you need. 
+                                                       during the working hours.
                                                     </div>
                                                 </div>
                                             </div>
@@ -554,20 +520,9 @@ export default function HomePage(){
                                                 <div id="collapseThree" className="collapse" role="tabpanel"
                                                      aria-labelledby="headingThree" data-parent="#accordionGroup">
                                                     <div className="card-body">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life
-                                                        accusamus terry richardson ad squid. 3 wolf moon
-                                                        officia aute,
-                                                        non cupidatat skateboard dolor brunch. Food truck quinoa
-                                                        nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                                        tempor,
-                                                        sunt aliqua put a bird on it squid single-origin coffee nulla
-                                                        assumenda shoreditch et. Nihil anim keffiyeh
-                                                        helvetica, craft beer labore wes anderson cred nesciunt sapiente
-                                                        ea proident. Ad vegan excepteur butcher
-                                                        vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                                                        aesthetic synth nesciunt you probably
-                                                        haven't
-                                                        heard of them accusamus labore sustainable VHS.
+                                                  We do not limit visitors coming into our hospital.
+                                                  But we sometimes react on the situations inside or outside.
+                                            
                                                     </div>
                                                 </div>
                                             </div>
@@ -579,7 +534,7 @@ export default function HomePage(){
                                 <div className="contact-area pl-0 pl-lg-5">
                                     <div className="section-title">
                                         <h3>Request
-                                            <span>Appointment</span>
+                                            <span> Appointment</span>
                                         </h3>
                                     </div>
                                     <form name="contact_form" className="default-form contact-form" action="!#"
@@ -651,22 +606,22 @@ export default function HomePage(){
                                                 </a>
                                             </figure>
                                         </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
-                                            temporibus?</p>
+                                        <p>we are located in the heart of RWANDA.
+                                            </p>
                                         <ul className="location-link">
                                             <li className="item">
                                                 <i className="fas fa-map-marker-alt"></i>
-                                                <p>Modamba, NY 80021, United States</p>
+                                                <p>Kigali ,KG310 -RWANDA</p>
                                             </li>
                                             <li className="item">
                                                 <i className="far fa-envelope" aria-hidden="true"></i>
                                                 <a href="mailto:support@medic.com">
-                                                    <p>support@medic.com</p>
+                                                    <p>janvier.rutagengwa@gmail.com</p>
                                                 </a>
                                             </li>
                                             <li className="item">
                                                 <i className="fas fa-phone" aria-hidden="true"></i>
-                                                <p>(88017) +123 4567</p>
+                                                <p>(0788) 483-455</p>
                                             </li>
                                         </ul>
                                         <ul className="list-inline social-icons">
@@ -690,17 +645,17 @@ export default function HomePage(){
                                     <ul className="menu-link">
                                         <li>
                                             <a href="">
-                                                <i className="fa fa-angle-right" aria-hidden="true"></i>Orthopadic
-                                                Liabilities</a>
+                                                <i className="fa fa-angle-right" aria-hidden="true"></i>Maternity services
+                                                </a>
                                         </li>
                                         <li>
                                             <a href="">
-                                                <i className="fa fa-angle-right" aria-hidden="true"></i>Dental
-                                                Clinic</a>
+                                                <i className="fa fa-angle-right" aria-hidden="true"></i>Vaccination services 
+                                                </a>
                                         </li>
                                         <li>
                                             <a href="">
-                                                <i className="fa fa-angle-right" aria-hidden="true"></i>Dormamu
+                                                <i className="fa fa-angle-right" aria-hidden="true"></i>Diagnostic 
                                                 Clinic</a>
                                         </li>
                                         <li>
@@ -712,7 +667,7 @@ export default function HomePage(){
                                             <a href="">
                                                 <i className="fa fa-angle-right" aria-hidden="true"></i>Gynaecological
                                                 Clinic</a>
-                                        </li>
+                                        </li> 
                                     </ul>
                                 </div>
                                 <div className="col-lg-4 col-md-7">
@@ -758,8 +713,8 @@ export default function HomePage(){
                     <div className="footer-bottom">
                         <div className="container clearfix">
                             <div className="copyright-text">
-                                <p>&copy; Copyright 2021. Designed &amp; Developed by <a
-                                    href="https://themefisher.com/">Themefisher</a></p>
+                                <p>&copy; Copyright 2023. Designed &amp; Developed by <a
+                                    href="https://themefisher.com/"> UNILAK</a></p>
                             </div>
                             <ul className="footer-bottom-link">
                                 <li>
