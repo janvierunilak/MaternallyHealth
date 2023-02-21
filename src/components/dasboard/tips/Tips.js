@@ -99,13 +99,13 @@ const DashContent = () => {
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>Tip title 1</Accordion.Header>
                     <Accordion.Body>
-                      tip body, this will contains more details obout the tip
+                      tip body, this will contains more details About the tip
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1">
                     <Accordion.Header>Tip title 1</Accordion.Header>
                     <Accordion.Body>
-                      tip body, this will contains more details obout the tip
+                      tip body, this will contains more details About the tip
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>

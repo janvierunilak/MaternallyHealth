@@ -3,7 +3,12 @@ const endpoints = {
     LOGOUT: '/api/v1/User/logout',
     PROFILE:'/api/v1/User/profile',
     SIGNUP:'/api/v1/User/signup',
-    ADDTIP:'/api/v1/HealthTips/add'
+    ADDTIP:'/api/v1/HealthTips/add',
+    ADDMOTHER:'/api/v1/mothers/add',
+    ADDHOSPITAL:'/api/v1/hospital/add',
+    GETALLTIPS:'/api/v1/HealthTips/all',
+    GETALLMOTHERS:'/api/v1/mothers/all',
+    GETALLHOSPITALS:'/api/v1/hospital/all'
 };
 
 export default endpoints;
