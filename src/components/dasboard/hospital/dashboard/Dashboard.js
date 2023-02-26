@@ -6,6 +6,7 @@ import customerService from '../../../assets/img/customerService.jpg'
 import StaffList from "./StaffList";
 import Women from "./women/Women";
 const DashContent = ({setActiveContent}) => {
+    
     return(<Fragment>
         <div className="container">
             <div className="row">

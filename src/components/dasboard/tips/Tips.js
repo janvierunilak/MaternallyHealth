@@ -72,7 +72,7 @@ const DashContent = () => {
           text: "Your tip has been successfully added.",
           icon: "success",
           button: "OK"
-        });
+        }).then(()=>getAllTips())
       })
       .catch((error) => {
         console.error(error);
