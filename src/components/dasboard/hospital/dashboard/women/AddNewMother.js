@@ -5,6 +5,7 @@ import Secure from "../../../../../system/helpers/secureLs";
 
 export default function AddNewMother() {
   const [show, setShow] = useState(false);
+  const [selectedHospital, setSelectedHospital] = useState('');
   const [mother, setMother] = useState({
     firstName: "",
     lastName: "",
@@ -56,8 +57,11 @@ const headers = {
       return { ...prevMother, [name]: value };
     });
   };
-
   const handleHospitalSelect = (event) => {
+    const selectedHospital = hospitals.find((hospital) => hospital.id === parseInt(event.target.value));
+    console.log('selectedHospital:', selectedHospital);
+    setSelectedHospital(selectedHospital.hospitalname);
+  
     setMother((prevMother) => {
       return { ...prevMother, hospitalId: event.target.value };
     });
@@ -70,7 +74,7 @@ const headers = {
       })
     . then((response) => response.json())
 .then((data) => {
-    console.log(data)
+    console.log("Hosipitals",data)
 setHospitals(data);
 })
 .catch((error) => {
@@ -88,8 +92,10 @@ return (
       <Button variant="primary" onClick={handleShow}>
         Add New Mother
       </Button>
-      <div className="">
-        <Modal show={show} onHide={handleClose}>
+  
+
+      <Modal show={show} onHide={handleClose} centered  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: "20px", width: "100%" }}>
+
           <Modal.Header closeButton>
             <Modal.Title>Add New Mother</Modal.Title>
           </Modal.Header>
@@ -195,24 +201,24 @@ return (
                 />
               </Form.Group>
               <Form.Group controlId="hospitalId">
-                <Form.Label>Select Hospital</Form.Label>
-                <Form.Control as="select" onChange={handleHospitalSelect}>
-                  <option>Select Hospital</option>
-                  {hospitals.map((hospital) => (
-                    <option key={hospital.id} value={hospital.id}>
-                      {hospital.hospitalname}
-                    </option>
-                  ))}
-                </Form.Control>
-              </Form.Group>
-            
-          <Button variant="primary" type="submit" className="mt-2">
+  <Form.Label>Select Hospital</Form.Label>
+  <Form.Control as="select" value={selectedHospital} onChange={handleHospitalSelect}>
+    <option>Select Hospital</option>
+    {hospitals.map((hospital) => (
+      <option key={hospital.id} value={hospital.id}>
+        {hospital.hospitalname}
+      </option>
+    ))}
+  </Form.Control>
+  <div>{selectedHospital}</div>
+</Form.Group>
+ <Button variant="primary" type="submit" className="mt-2">
           Submit
         </Button>
       </Form>
     </Modal.Body>
   </Modal>
-  </div>
+  
 </>
 )
 }

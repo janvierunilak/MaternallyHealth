@@ -25,6 +25,7 @@ export default function WomenList() {
         return response.json();
       })
       .then((data) => {
+        console.log("Mothers",data)
         setMothers(data);
       })
       .catch((error) => {
@@ -78,7 +79,7 @@ export default function WomenList() {
                       <td className="text-truncate tdTag1">{mother.email}</td>
                       <td>{mother.status}</td>
                       <td className="text-center">
-                        <Link to={"/mothers/" + mother.id}>
+                        <Link to={"/mothers/" + mother.phoneNumber}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                                  fill="currentColor" viewBox="0 0 16 16"
                                                  className="bi bi-eye-fill fs-5 text-primary">
@@ -90,7 +91,7 @@ export default function WomenList() {
                       </td>
                      
                       <td className="text-center">
-                        <Link to={"/mothers/" + mother.id + "/edit"}>
+                        <Link to={"/mothers/" + mother + "/edit"}>
                           {/* <FontAwesomeIcon icon={faEdit} /> */}
                         </Link>
                       </td>
