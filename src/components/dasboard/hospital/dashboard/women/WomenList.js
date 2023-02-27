@@ -20,7 +20,9 @@ export default function WomenList() {
     })
       .then((response) => {
         if (!response.ok) {
+          window.location.assign("/")
           throw new Error("Network response was not ok");
+        
         }
         return response.json();
       })

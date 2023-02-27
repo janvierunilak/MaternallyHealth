@@ -11,7 +11,8 @@ const endpoints = {
     GETALLHOSPITALS:'/api/v1/hospital/all',
     GETMOTHERBYPHONE:'/api/v1/mothers/phone/',
     GETMOTHERCHILDREN:'/api/v1/Baby/mother/',
-    GETALLTIPS:'/api/v1/HealthTips/all'
+    GETALLTIPS:'/api/v1/HealthTips/all',
+    ADDCHILD:'/api/v1/Baby/add'
 };
 
 export default endpoints;

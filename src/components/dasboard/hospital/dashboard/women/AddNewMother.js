@@ -202,14 +202,12 @@ return (
               </Form.Group>
               <Form.Group controlId="hospitalId">
   <Form.Label>Select Hospital</Form.Label>
-  <Form.Control as="select" value={selectedHospital} onChange={handleHospitalSelect}>
-    <option>Select Hospital</option>
-    {hospitals.map((hospital) => (
-      <option key={hospital.id} value={hospital.id}>
-        {hospital.hospitalname}
-      </option>
-    ))}
-  </Form.Control>
+     
+  <Form.Select onChange={handleHospitalSelect}>
+                {hospitals.map((hospital, index) => (
+                  <option key={index} value={hospital.id}>{hospital.hospitalname}</option>
+                ))}
+              </Form.Select>
   <div>{selectedHospital}</div>
 </Form.Group>
  <Button variant="primary" type="submit" className="mt-2">
