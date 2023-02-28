@@ -1,133 +1,222 @@
-import {useState} from "react";
-import {Button, Form, Modal} from "react-bootstrap";
+import { useState,useEffect } from "react";
+import { Button, Form, Modal, Row, Col } from "react-bootstrap";
+import Constants from "../../../../../system/constants";
+import Secure from "../../../../../system/helpers/secureLs";
 
-export default function AddNewMother(){
+export default function AddNewMother() {
+  const [show, setShow] = useState(false);
+  const [selectedHospital, setSelectedHospital] = useState('');
+  const [mother, setMother] = useState({
+    firstName: "",
+    lastName: "",
+    residance: "",
+    phoneNumber: "",
+    email: "",
+    height: "",
+    age: "",
+    weight: "",
+    idnumber: "",
+    hospitalId: 0,
+  });
+  const [hospitals, setHospitals] = useState([]);
+  const token = Secure.getToken();
 
-    const [show, setShow] = useState(false);
+const headers = {
+  "Content-Type": "application/json",
+  "Authorization": "Bearer " + token
+};
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    return(
-        <div>
-            <Modal show={show} onHide={handleClose}
-                   backdrop="static"
-                   keyboard={false}
-                   fullscreen={true}
-                   className={"w-100"}>
-                <Modal.Header closeButton>
-                    <Modal.Title>add new Mother</Modal.Title>
-                </Modal.Header>
-                <Modal.Body className={"w-100"}>
-                    <Form className={"w-50"}>
-                        <Form.Group className="mb-3 row" controlId="formBasicEmail">
-                            <Form.Label className={"col-12 col-md-4"}>First Name</Form.Label>
-                            <div className={"col-12 col-md-8"}>
-                                <Form.Control type="text" placeholder="enter FistName" />
-                            </div>
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const url = Constants.BACKEND_URL + Constants.endpoints.ADDMOTHER;
+    fetch(url, {
+      method: "POST",
+      headers:headers,
+      body: JSON.stringify(mother),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        handleClose();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 
-                        </Form.Group>
-                        <Form.Group className="mb-3 row" controlId="formBasicEmail">
-                            <Form.Label className={"col-12 col-md-4"}>Last Name</Form.Label>
-                            <div className={"col-12 col-md-8"}>
-                                <Form.Control type="text" placeholder="enter LastName" />
-                            </div>
+  const handleInputChange = (event) => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
 
-                        </Form.Group>
-                        <Form.Group className="mb-3 row" controlId="formBasicEmail">
-                            <Form.Label className={"col-12 col-md-4"}>Residance</Form.Label>
-                            <div className={"col-12 col-md-8"}>
-                                <Form.Control type="text" placeholder="enter Residance" />
-                            </div>
+    setMother((prevMother) => {
+      return { ...prevMother, [name]: value };
+    });
+  };
+  const handleHospitalSelect = (event) => {
+    const selectedHospital = hospitals.find((hospital) => hospital.id === parseInt(event.target.value));
+    console.log('selectedHospital:', selectedHospital);
+    setSelectedHospital(selectedHospital.hospitalname);
+  
+    setMother((prevMother) => {
+      return { ...prevMother, hospitalId: event.target.value };
+    });
+  };
 
-                        </Form.Group>
-                        <Form.Group className="mb-3 row" controlId="formBasicEmail">
-                            <Form.Label className={"col-12 col-md-4"}>Tel Phone</Form.Label>
-                            <div className={"col-12 col-md-8"}>
-                                <Form.Control type="tel" placeholder="enter phone number" />
-                            </div>
+  const fetchHospitals = () => {
+    const url = Constants.BACKEND_URL + Constants.endpoints.GETALLHOSPITALS;
+    fetch(url,{
+        headers: headers
+      })
+    . then((response) => response.json())
+.then((data) => {
+    console.log("Hosipitals",data)
+setHospitals(data);
+})
+.catch((error) => {
+console.error("Error:", error);
+});
+};
 
-                        </Form.Group>
-                        <Form.Group className="mb-3 row" controlId="formBasicEmail">
-                            <Form.Label className={"col-12 col-md-4"}>Email address</Form.Label>
-                            <div className={"col-12 col-md-8"}>
-                                <Form.Control type="email" placeholder="Enter email" />
-                                <Form.Text className="text-muted">
-                                    We'll never share your email with anyone else.
-                                </Form.Text>
-                            </div>
+// Fetch hospitals on component mount
+useEffect(() => {
+fetchHospitals();
+}, []);
 
-                        </Form.Group>
-                        <Form.Group className="mb-3 row" controlId="formBasicEmail">
-                            <Form.Label className={"col-12 col-md-4"}>height</Form.Label>
-                            <div className={"col-12 col-md-8"}>
-                                <Form.Control type="number" placeholder="enter height" />
-                                <Form.Text className="text-muted">
-                                    how large is the mother.
-                                </Form.Text>
-                            </div>
+return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Add New Mother
+      </Button>
+  
 
-                        </Form.Group>
-                        <Form.Group className="mb-3 row" controlId="formBasicEmail">
-                            <Form.Label className={"col-12 col-md-4"}>Age</Form.Label>
-                            <div className={"col-12 col-md-8"}>
-                                <Form.Control type="number" placeholder="enter age" />
-                            </div>
+      <Modal show={show} onHide={handleClose} centered  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: "20px", width: "100%" }}>
 
-                        </Form.Group>
-                        <Form.Group className="mb-3 row" controlId="formBasicEmail">
-                            <Form.Label className={"col-12 col-md-4"}>Weight</Form.Label>
-                            <div className={"col-12 col-md-8"}>
-                                <Form.Control type="number" placeholder="enter Weight" />
-                            </div>
-
-                        </Form.Group>
-                        <Form.Group className="mb-3 row" controlId="formBasicEmail">
-                            <Form.Label className={"col-12 col-md-4"}>Id</Form.Label>
-                            <div className={"col-12 col-md-8"}>
-                                <Form.Control type="number" placeholder="enter age" />
-                            </div>
-
-                        </Form.Group>
-                    </Form>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Add
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-
-            <div className="container">
-                <div className="row">
-                    <div className="col">
-                        <div className="card border rounded" onClick={() => {
-                            handleShow();
-                        }}>
-                            <div className="card-body align-items-lg-center cardRegisterMother">
-                                <div className="row">
-                                    <div className="col">
-                                        <h4 className="text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center registerMotherText">click
-                                            to register Mother</h4>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col d-inline-flex justify-content-lg-center">
-                                        <button className="btn btn-primary btnAddNewMother" type="button">Add
-                                            New Mother
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    )
+          <Modal.Header closeButton>
+            <Modal.Title>Add New Mother</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form onSubmit={handleSubmit}>
+              <Row>
+                <Col sm={6}>
+                  <Form.Group controlId="firstName">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="firstName"
+                      value={mother.firstName}
+                      onChange={handleInputChange}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col sm={6}>
+                  <Form.Group controlId="lastName">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="lastName"
+                      value={mother.lastName}
+                      onChange={handleInputChange}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Form.Group controlId="residance">
+                <Form.Label>Residance</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="residance"
+                  value={mother.residance}
+                  onChange={handleInputChange}
+                />
+              </Form.Group>
+              <Row>
+                <Col sm={6}>
+                  <Form.Group controlId="phoneNumber">
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="phoneNumber"
+                      value={mother.phoneNumber}
+                      onChange={handleInputChange}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col sm={6}>
+                  <Form.Group controlId="email">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      name="email"
+                      value={mother.email}
+                      onChange={handleInputChange}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row>
+                <Col sm={6}>
+                  <Form.Group controlId="height">
+                    <Form.Label>Height</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="height"
+                      value={mother.height}
+                      onChange={handleInputChange}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col sm={6}>
+                  <Form.Group controlId="age">
+                    <Form.Label>Age</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="age"
+                      value={mother.age}
+                      onChange={handleInputChange}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Form.Group controlId="weight">
+                <Form.Label>Weight</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="weight"
+                  value={mother.weight}
+                  onChange={handleInputChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="idnumber">
+                <Form.Label>ID NUMBER</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="idnumber"
+                  value={mother.idnumber}
+                  onChange={handleInputChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="hospitalId">
+  <Form.Label>Select Hospital</Form.Label>
+     
+  <Form.Select onChange={handleHospitalSelect}>
+                {hospitals.map((hospital, index) => (
+                  <option key={index} value={hospital.id}>{hospital.hospitalname}</option>
+                ))}
+              </Form.Select>
+  <div>{selectedHospital}</div>
+</Form.Group>
+ <Button variant="primary" type="submit" className="mt-2">
+          Submit
+        </Button>
+      </Form>
+    </Modal.Body>
+  </Modal>
+  
+</>
+)
 }

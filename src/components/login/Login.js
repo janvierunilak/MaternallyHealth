@@ -13,7 +13,7 @@ import Secure from "../../system/helpers/secureLs";
 import Keys from "../../system/constants/keys";
 import { getHeaders } from "../../system/constants/config";
 import {useData} from "../../context/DataContext";
-
+//Joi is used for form validation
 const fields = {
     email: joi.string().required(),
     password: joi.string().required(),
@@ -22,7 +22,6 @@ const fields = {
 const schema = joi.object(fields);
 
 export default function Login(){
-
     const [loading, setLoading] = useState(false)
     const router = useNavigate();
     const { setProfile } = useData();
@@ -58,7 +57,7 @@ export default function Login(){
             getAndSetProfile()
             router("/dashboard")
         }).catch(error => {
-            // console.error(error)
+             console.error(error)
             setLoading(!loading);
             swal('Login fail!', error.response.data.message || 'incorrect username or password', 'error').then(()=>{
                 setLoading(false);
@@ -116,7 +115,7 @@ export default function Login(){
                             </div>
                         </div>
                     </form>
-                    <p className="text-end mt-3 mb-0"><a className="link-danger text-info small" data-aos="fade"
+                    <p className="text-end mt-3 mb-0"><a className="link-danger  small" data-aos="fade"
                                                          data-aos-delay="300" data-aos-once="true" href="#">Forgot
                         Password?</a></p>
                 </div>
